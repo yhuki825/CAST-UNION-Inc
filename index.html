@@ -1,0 +1,676 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<!--
+================================================================
+  株式会社キャストユニオン ブランドサイト デザイン案（9/26 ハウススタイル版）
+  コンセプト：「それぞれの役（キャスト）を、ひとつに結ぶ（ユニオン）」
+    社名「キャストユニオン」を、Cast＝役を担う人／型に流し込むこと、Union＝ひとつに結ぶこと、と読む案です。
+    処方する人、製造する人、薬事と品質を整える人、伝える人。分かれがちな役割が一滴ずつ集まり、
+    ひとつの瓶（商品）になる——という像で全体を組み立てています。
+    ・ヒーロー：離れた場所から落ちるしずくが寄り合い、ひとつの瓶に満ちていくCanvasアニメーション
+    ・右端のスクロールレール：スポイトの下の小瓶が、読み進めるほど満ちていく（％表示）
+    ※所在地・地名、代表者の氏名から着想した要素は採用していません。
+  デプロイ：Cloudflare Pages（Direct Upload）にこのファイルをそのままアップロード。
+            ビルド不要。外部依存は Google Fonts と Unsplash 画像のみ。
+  書体：Shippori Mincho B1 ＋ Zen Kaku Gothic New ＋ Cormorant Garamond ／ 地色：青墨 #15181D ／ アクセント：シャンパン #E4CFAE
+
+  ■ 公開前の確認事項（チェックリスト）
+  【確認事項】1. 社名の由来：「Cast＝役／型、Union＝結ぶ」の解釈は本案の仮説です
+  【確認事項】2. キャッチコピー「それぞれの役を、ひと瓶に結ぶ。」は案です
+  【確認事項】3. 事業を「つくる／ととのえる／とどける」の3領域にまとめた整理と各説明文は案です
+  【確認事項】4. 受託製造（OEM）の5ステップは一般的な流れをもとにした案です
+  【確認事項】5. 製造設備・許可（化粧品製造業許可・製造販売業許可など）の有無はCSVにないため記載していません
+  【確認事項】6. 薬機法：効能効果を断定・保証する表現はサイト内で使っていません。商品紹介を追加する際もご注意ください
+  【確認事項】7. 金融アプリ・ブロックチェーンに関する記載は、金融商品の勧誘と誤解されない表現にとどめています
+  【確認事項】8. 代表者の役職名（株式会社＝「代表取締役」と仮置き）
+  【確認事項】9. 代表メッセージは草案です。ご本人の確認・修正を経て公開してください
+  【確認事項】10. 設立・資本金・取引先・実績などはCSVにないため掲載していません
+  【確認事項】11. 画像はUnsplashのフリー素材（仮）。自社写真への差し替え推奨
+  [ ] OGP画像・favicon・公開URL
+  写真ID：1608571423902-eed4a5ad8108（美容液のボトル）／1617897903246-719242758050（ボトルと植物）／
+          1532187863486-abf9dbad1b69（研究室のピペット）／1551288049-bebda4e38f71（データ分析画面）／
+          1607006344380-b6775a0824a7（石鹸）／1619451334792-150fd785ee74（クリーム容器）／
+          1639762681485-074b7f938ba0（ブロックのイメージ）
+================================================================
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>株式会社キャストユニオン｜化粧品の企画・開発・受託製造と、美容・データの支援</title>
+<meta name="description" content="株式会社キャストユニオンは、化粧品・医薬部外品・石鹸・日用品雑貨の企画、開発、受託製造および販売から、薬事申請・品質管理の支援、マーケティングとデータ解析までを担う会社です。">
+<meta property="og:title" content="株式会社キャストユニオン｜化粧品の企画・開発・受託製造と、美容・データの支援">
+<meta property="og:description" content="株式会社キャストユニオンは、化粧品・医薬部外品・石鹸・日用品雑貨の企画、開発、受託製造および販売から、薬事申請・品質管理の支援、マーケティングとデータ解析までを担う会社です。">
+<meta property="og:type" content="website">
+<!-- 要確認：og:url / og:image は公開ドメイン確定後に設定 -->
+<meta name="theme-color" content="#15181D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315181D'/%3E%3Cpath d='M13 5h6v4l3 3v15H10V12l3-3z' fill='none' stroke='%23E4CFAE' stroke-width='1.6'/%3E%3Cpath d='M11 19h10v7H11z' fill='%23E4CFAE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{--base:#15181D;--base-2:#1D2128;--deep:#101216;--text:#EEE9E2;--mute:#9AA0A8;--accent:#E4CFAE;--rose:#D9B3AE;--line:rgba(238,233,226,.14);--paper:#EEE9E2;--ink:#1A1D22;--paper-line:rgba(26,29,34,.16);--paper-mute:#5F646C;--header-bg:rgba(21,24,29,.86);--menu-bg:rgba(16,18,22,.97);--band-veil:rgba(16,18,22,.7);--shape:200px 200px 3px 3px;--ph-fallback:linear-gradient(160deg,#1D2128,#15181D);--ph-pattern:radial-gradient(circle at 50% 30%,rgba(228,207,174,.35) 0 6px,transparent 7px) 0 0/42px 56px,linear-gradient(160deg,#1D2128,#15181D);--serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;--sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;--latin:"Cormorant Garamond","Times New Roman",serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--header-h:72px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--base);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.9;letter-spacing:.04em;word-break:auto-phrase;text-wrap:pretty;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,dl,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+.nw{display:inline-block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--accent);color:var(--base);padding:10px 16px;text-decoration:none;font-weight:700}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
+
+/* header */
+.header{position:fixed;inset:0 0 auto 0;z-index:100;padding-top:env(safe-area-inset-top,0px);border-bottom:1px solid transparent;transition:background .4s,backdrop-filter .4s,border-color .4s}
+.header.is-scrolled{background:var(--header-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.header__in{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(1240px,calc(100% - 40px));margin:0 auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.logo svg{width:30px;height:30px;flex:none}
+.logo__name{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.logo__name b{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:.12em;white-space:nowrap}
+.logo__name small{font-size:10.5px;letter-spacing:.18em;color:var(--mute);white-space:nowrap}
+.gnav ul{display:flex;gap:clamp(18px,2.2vw,30px)}
+.gnav a{position:relative;display:block;padding:6px 0;font-size:13.5px;letter-spacing:.13em;text-decoration:none}
+.gnav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.gnav a:hover::after,.gnav a:focus-visible::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer;position:relative;padding:0}
+.menu-btn span{position:absolute;left:11px;right:11px;height:1.5px;background:currentColor;transition:transform .3s,opacity .3s}
+.menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:900px){
+  :root{--header-h:64px}
+  .menu-btn{display:block;z-index:120}
+  .gnav{position:fixed;inset:0;background:var(--menu-bg);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;z-index:110}
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav ul{flex-direction:column;align-items:center;gap:26px}
+  .gnav a{font-family:var(--serif);font-size:20px;letter-spacing:.16em}
+}
+
+/* sections */
+.sec{position:relative;padding:clamp(96px,14vw,180px) 0}
+.sec--alt{background:var(--base-2)}
+.sec--deep{background:var(--deep)}
+.sec--paper{background:var(--paper);color:var(--ink);--line:var(--paper-line);--mute:var(--paper-mute);--text:var(--ink)}
+.sh{margin-bottom:clamp(40px,6vw,72px)}
+.sh__ja{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.8vw,36px);letter-spacing:.12em;line-height:1.55}
+.sh__en{font-family:var(--latin);color:var(--accent)}
+.sh__sub{margin-top:14px;color:var(--mute);font-size:14px;letter-spacing:.1em}
+.lead{font-family:var(--serif);font-size:clamp(20px,2.3vw,28px);line-height:1.8;letter-spacing:.1em}
+.prose p{max-width:34em}
+.prose p+p{margin-top:1.3em}
+
+/* concept */
+.concept{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);align-items:center}
+.concept .lead{margin-bottom:28px}
+.fig{width:100%;height:auto;display:block;overflow:visible}
+@media (max-width:900px){.concept{grid-template-columns:minmax(0,1fr)}}
+
+/* photo */
+.ph{position:relative;overflow:hidden;background:var(--ph-fallback)}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.03)}
+.ph.is-fallback{background:var(--ph-pattern)}
+
+/* band */
+.band{position:relative;height:clamp(280px,46vw,540px);overflow:hidden}
+.band .ph{position:absolute;inset:0}
+.band .ph img{position:absolute;left:0;top:-9%;height:118%;filter:saturate(.68) brightness(.7);will-change:transform}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,var(--band-veil));pointer-events:none}
+.band__cap{position:absolute;left:0;right:0;bottom:clamp(28px,5vw,56px);z-index:2}
+.band__cap p{font-family:var(--serif);font-size:clamp(19px,2.4vw,30px);letter-spacing:.16em;line-height:1.7;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.4)}
+
+/* business rows */
+.biz{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;position:relative}
+.biz+.biz{margin-top:clamp(72px,10vw,128px)}
+.biz:nth-of-type(even) .biz__media{order:2}
+.biz__media .ph{aspect-ratio:4/3;border-radius:var(--shape)}
+.biz__media .ph img{transition:transform 1.4s cubic-bezier(.22,.7,.2,1)}
+.biz:hover .biz__media .ph img{transform:scale(1.035)}
+.biz__kind{font-size:13.5px;letter-spacing:.16em;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.biz__kind em{font-family:var(--latin);font-style:italic;font-size:15px;letter-spacing:.06em;color:var(--mute)}
+.biz h3{font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.4vw,30px);letter-spacing:.12em;line-height:1.6;margin-bottom:18px}
+.biz p{max-width:30em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags li{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:12.5px;letter-spacing:.08em;color:var(--mute)}
+.rule-list{margin-top:22px;border-top:1px solid var(--line)}
+.rule-list li{position:relative;padding:12px 0 12px 1.5em;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.7}
+.rule-list li::before{content:"";position:absolute;left:0;top:1.25em;width:7px;height:7px;background:var(--accent);border-radius:var(--bullet-r,50%)}
+@media (max-width:900px){.biz{grid-template-columns:minmax(0,1fr)}.biz:nth-of-type(even) .biz__media{order:0}}
+
+/* steps (actual order -> numbered) */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:11px;height:1px;background:var(--line)}
+.steps::after{content:"";position:absolute;left:0;top:11px;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 2.4s cubic-bezier(.6,.1,.2,1)}
+.steps.is-in::after{transform:scaleX(1)}
+.step{position:relative;padding-top:44px}
+.step__dot{position:absolute;left:0;top:0;width:23px;height:23px;border-radius:var(--dot-r,50%);border:1px solid var(--mute);background:var(--step-bg,var(--base));display:grid;place-items:center}
+.step__dot::after{content:"";width:11px;height:11px;border-radius:var(--dot-r,50%);background:var(--accent);transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.steps.is-in .step__dot::after{transform:scale(1)}
+.steps.is-in .step:nth-child(2) .step__dot::after{transition-delay:.6s}
+.steps.is-in .step:nth-child(3) .step__dot::after{transition-delay:1.2s}
+.steps.is-in .step:nth-child(4) .step__dot::after{transition-delay:1.8s}
+.step__no{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em}
+.step h3{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.14em;margin:6px 0 10px}
+.step p{font-size:14.5px;line-height:1.85;color:var(--mute)}
+.loop-note{margin-top:40px;display:flex;align-items:center;gap:12px;color:var(--mute);font-size:14px;letter-spacing:.1em}
+.loop-note svg{width:22px;height:22px;fill:none;stroke:var(--accent);stroke-width:1.4}
+@media (max-width:900px){
+  .steps{grid-template-columns:minmax(0,1fr);gap:0;padding-left:40px}
+  .steps::before,.steps::after{left:11px;right:auto;top:10px;bottom:10px;width:1px;height:auto}
+  .steps::after{transform:scaleY(0);transform-origin:top}
+  .steps.is-in::after{transform:scaleY(1)}
+  .step{padding:0 0 36px}
+  .step__dot{left:-40px}
+}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.value{padding:36px clamp(20px,3vw,40px) 40px;border-right:1px solid var(--line)}
+.value:first-child{padding-left:0}.value:last-child{border-right:0;padding-right:0}
+.value__mark{font-family:var(--latin);color:var(--accent);font-size:15px;letter-spacing:.12em;margin-bottom:14px;display:block}
+.value h3{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.14em;margin-bottom:12px;line-height:1.6}
+.value p{font-size:14.5px;color:var(--mute);line-height:1.9}
+@media (max-width:900px){.values{grid-template-columns:minmax(0,1fr)}.value{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}}
+
+/* message (vertical on desktop) */
+.msg{display:flex;flex-direction:row-reverse;gap:clamp(40px,6vw,90px);justify-content:center;align-items:flex-start}
+.msg__title{writing-mode:vertical-rl;font-family:var(--serif);font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:.2em;line-height:1.7;flex:none}
+.msg__body{writing-mode:vertical-rl;font-family:var(--serif);font-size:16px;line-height:2.3;letter-spacing:.14em;height:30em;max-width:100%;overflow-x:auto;display:flex;flex-direction:column}
+.msg__body p{margin:0 0 0 1.6em}
+.msg__body p.first{font-size:1.3rem}
+.msg__sign{margin-top:auto;text-align:end}
+.msg__sign small{display:block;font-size:13px;color:var(--mute);letter-spacing:.2em}
+@media (max-width:860px){
+  .msg{flex-direction:column;gap:32px}
+  .msg__title,.msg__body{writing-mode:horizontal-tb;height:auto}
+  .msg__body{line-height:2.1;letter-spacing:.06em;overflow:visible}
+  .msg__body p{margin:0 0 1.4em}
+  .msg__sign{text-align:right}
+}
+
+/* company */
+.company{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(40px,7vw,110px);align-items:start}
+.profile{margin:0;border-top:1px solid var(--line)}
+.profile>div{display:grid;grid-template-columns:9em minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.profile dt{color:var(--mute);font-size:14px;letter-spacing:.14em}
+.profile dd{margin:0;overflow-wrap:anywhere}
+.profile dd li{position:relative;padding-left:1.2em}
+.profile dd li+li{margin-top:4px}
+.profile dd li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:6px;background:var(--accent);border-radius:var(--bullet-r,50%)}
+@media (max-width:900px){.company{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.profile>div{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:72px 0 calc(40px + env(safe-area-inset-bottom,0px));background:var(--deep)}
+.footer__in{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px}
+.footer__tag{font-family:var(--serif);font-size:clamp(16px,1.8vw,22px);letter-spacing:.18em;margin-top:18px}
+.footer nav ul{display:flex;flex-wrap:wrap;gap:10px 24px}
+.footer nav a{font-size:12.5px;color:var(--mute);text-decoration:none;letter-spacing:.12em;transition:color .3s}
+.footer nav a:hover{color:var(--text)}
+.copy{margin-top:40px;font-family:var(--latin);font-size:13px;color:var(--mute);letter-spacing:.08em}
+
+/* reveal (only hidden when JS runs) */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1.05s cubic-bezier(.22,.7,.2,1),transform 1.05s cubic-bezier(.22,.7,.2,1)}
+.js .rv.is-in{opacity:1;transform:none}
+.js .steps .step{opacity:0;transition:opacity .9s cubic-bezier(.22,.7,.2,1)}
+.js .steps.is-in .step{opacity:1}
+.js .steps.is-in .step:nth-child(2){transition-delay:.4s}
+.js .steps.is-in .step:nth-child(3){transition-delay:.8s}
+.js .steps.is-in .step:nth-child(4){transition-delay:1.2s}
+/* self-drawing SVG */
+.fig .ln{fill:none;stroke:var(--accent);stroke-width:1.3;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.45,.05,.2,1) .3s}
+.fig .ln2{fill:none;stroke:var(--mute);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.2s cubic-bezier(.45,.05,.2,1) .9s}
+.fig .dot{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .8s 1.2s,transform .8s cubic-bezier(.3,1.6,.5,1) 1.2s}
+.fig .lbl{opacity:0;transition:opacity 1s 1.8s;font-family:var(--sans);font-size:13px;letter-spacing:.12em;fill:var(--text)}
+.fig .lbl.en{font-family:var(--latin);fill:var(--accent);font-size:13px}
+.fig.is-in .ln,.fig.is-in .ln2{stroke-dashoffset:0}
+.fig.is-in .dot{opacity:1;transform:none}
+.fig.is-in .lbl{opacity:1}
+
+/* scroll cue */
+.cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--latin);font-size:11px;letter-spacing:.3em;color:var(--mute);z-index:3}
+.cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--mute),transparent);animation:cue 2.4s ease-in-out infinite}
+@media (max-width:900px){.cue{display:none}}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* hero entrance (class toggle after first frame) */
+.hero [data-in]{opacity:0;transform:translateY(14px);transition:opacity 1.1s ease,transform 1.1s ease}
+.hero h1 [data-in]{transform:translateY(-14px)}
+.is-loaded .hero [data-in]{opacity:1;transform:none}
+.is-loaded .hero [data-in="2"]{transition-delay:.4s}
+.is-loaded .hero [data-in="3"]{transition-delay:.9s}
+.is-loaded .hero [data-in="4"]{transition-delay:1.3s}
+
+/* rail base */
+.rail{position:fixed;z-index:90;pointer-events:none}
+@media (max-width:900px){.rail{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .steps .step,.hero [data-in]{opacity:1!important;transform:none!important}
+  .fig .ln,.fig .ln2{stroke-dashoffset:0}.fig .dot,.fig .lbl{opacity:1;transform:none}
+  .steps::after{transform:none}.step__dot::after{transform:scale(1)}
+}
+/* ===== site ===== */
+/* heading H1': big italic Latin + small JA */
+.sh{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap}
+.sh__en{font-style:italic;font-weight:400;font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:.01em;order:0}
+.sh__ja{font-size:15px;letter-spacing:.24em;color:var(--accent);font-weight:500;order:1}
+.sh__sub{flex-basis:100%;margin-top:6px}
+.sec-title{font-family:var(--serif);font-weight:600;font-size:clamp(24px,2.8vw,36px);letter-spacing:.12em;line-height:1.6;margin-bottom:26px}
+/* hero A */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:radial-gradient(110% 80% at 30% 0%,#232833 0%,var(--base) 60%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero__in{position:relative;z-index:2;min-height:100vh;min-height:100svh;width:min(1240px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;padding:calc(var(--header-h) + 48px) 0 80px}
+.hero__title{grid-column:2;writing-mode:vertical-rl;font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.6vw,62px);letter-spacing:.22em;line-height:1.55;margin-right:clamp(0px,6vw,90px)}
+.hero__title span{display:block}
+.hero__title span+span{padding-top:2.6em}
+.hero__low{grid-column:1;grid-row:1;align-self:end;max-width:30em}
+.hero__en{font-family:var(--latin);font-style:italic;font-size:clamp(20px,2vw,26px);color:var(--accent);margin-bottom:12px}
+.hero__lead{font-size:15px;line-height:2.05}
+@media (max-width:900px){
+  .hero__in{grid-template-columns:minmax(0,1fr);align-content:end;gap:26px}
+  .hero__title{grid-column:1;writing-mode:horizontal-tb;font-size:clamp(28px,8vw,38px);letter-spacing:.1em;margin:0}
+  .hero__title span+span{padding-top:0;padding-left:1em}
+  .hero__low{grid-row:2}
+}
+/* name dictionary */
+.dict{margin-top:30px;border-top:1px solid var(--line)}
+.dict div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.dict dt{font-family:var(--latin);font-style:italic;font-size:24px;color:var(--accent);line-height:1.2}
+.dict dd{margin:0;font-size:14.5px;color:var(--mute)}
+.dict dd b{display:block;color:var(--text);font-family:var(--serif);font-size:16px;letter-spacing:.12em;font-weight:600}
+/* business */
+.biz__media .ph{aspect-ratio:4/5;max-width:440px}
+.biz:nth-of-type(even) .biz__media .ph{margin-left:auto}
+.biz__no{font-family:var(--latin);font-style:italic;font-size:15px;color:var(--mute)}
+.biz .rule-list li::before{border-radius:50% 50% 50% 0;transform:rotate(-45deg);width:7px;height:7px;background:var(--rose)}
+.trip{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:4px}
+.trip figure{position:relative}
+.trip .ph{height:clamp(220px,32vw,420px)}
+.trip figcaption{position:absolute;right:14px;top:16px;writing-mode:vertical-rl;font-family:var(--serif);font-size:16px;letter-spacing:.3em;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+@media (max-width:640px){.trip{grid-template-columns:minmax(0,1fr)}.trip .ph{height:220px}}
+.steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+.steps.is-in .step:nth-child(5) .step__dot::after{transition-delay:2.4s}
+.js .steps.is-in .step:nth-child(5){transition-delay:1.6s}
+@media (max-width:900px){.steps{grid-template-columns:minmax(0,1fr)}}
+.value__mark{font-family:var(--serif);font-style:normal;font-size:44px;line-height:1;color:var(--accent);letter-spacing:0}
+.msg-wrap{position:relative}
+/* rail: dropper + vial */
+.rail{right:26px;top:50%;transform:translateY(-50%);height:56vh;width:34px}
+.rail__line{position:absolute;left:16px;top:44px;bottom:68px;width:1px;background:var(--line)}
+.rail__drop{position:absolute;left:12px;width:9px;height:12px;top:44px;margin-top:-6px}
+.rail__drop path{fill:var(--accent)}
+.rail__vial{position:absolute;left:0;bottom:0;width:34px;height:64px}
+.rail__vial .glass{fill:none;stroke:var(--text);stroke-opacity:.55;stroke-width:1}
+.rail__vial .liq{fill:var(--accent)}
+.rail__pip{position:absolute;left:9px;top:0;width:16px;height:44px}
+.rail__pip path{fill:none;stroke:var(--text);stroke-opacity:.55;stroke-width:1}
+.rail__pip rect{fill:var(--rose);opacity:.8}
+.rail__read{position:absolute;right:42px;bottom:22px;font-family:var(--mono);font-size:11px;color:var(--mute);font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="header" id="header">
+  <div class="header__in">
+    <!-- 【確認事項】ロゴは仮のマークです。英字併記「CAST UNION」はカタカナ商号からの仮表記です -->
+    <a class="logo" href="#top" aria-label="株式会社キャストユニオン トップへ">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 4h6v4.5l3.5 3.5V28h-13V12L13 8.5z" fill="none" stroke="#EEE9E2" stroke-width="1.2"/><path d="M10.2 19.5q2.9-1.6 5.8 0t5.8 0V27.4H10.2z" fill="#E4CFAE"/><circle cx="16" cy="1.8" r="1.4" fill="#D9B3AE"/></svg>
+      <span class="logo__name"><b>キャストユニオン</b><small>CAST UNION</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnav" aria-expanded="false" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー"><ul><li><a href="#concept">名前に込めたこと</a></li><li><a href="#business">事業内容</a></li><li><a href="#process">受託製造の流れ</a></li><li><a href="#values">大切にしていること</a></li><li><a href="#message">代表メッセージ</a></li><li><a href="#company">会社概要</a></li></ul></nav>
+  </div>
+</header>
+
+<div class="rail" id="rail" aria-hidden="true">
+  <svg class="rail__pip" viewBox="0 0 16 44"><rect x="3" y="0" width="10" height="12" rx="4"/><path d="M5 12h6v22l-3 8-3-8z"/></svg>
+  <div class="rail__line"></div>
+  <svg class="rail__drop" id="railDrop" viewBox="0 0 9 12"><path d="M4.5 0C6 3 9 6 9 8a4.5 4.5 0 0 1-9 0C0 6 3 3 4.5 0z"/></svg>
+  <svg class="rail__vial" viewBox="0 0 34 64"><defs><clipPath id="vialClip"><path d="M12 4h10v10l7 8v38H5V22l7-8z"/></clipPath></defs>
+    <rect class="liq" id="railLiq" x="0" y="60" width="34" height="60" clip-path="url(#vialClip)"/>
+    <path class="glass" d="M12 4h10v10l7 8v38H5V22l7-8z"/></svg>
+  <span class="rail__read" id="railRead">00%</span>
+</div>
+
+<main id="main">
+<section class="hero" id="top" aria-label="メインビジュアル">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero__in">
+      <!-- 【確認事項】キャッチコピーは案です -->
+      <h1 class="hero__title"><span data-in="1">それぞれの役を、</span><span data-in="2">ひと瓶に結ぶ。</span></h1>
+      <div class="hero__low">
+        <p class="hero__en" data-in="3">Cosmetics, made in union.</p>
+        <p class="hero__lead" data-in="4">化粧品・医薬部外品・石鹸・日用品雑貨の企画、開発、受託製造および販売。美容機器の輸出入から、薬事申請や品質管理の支援、マーケティングとデータの活用まで、ひとつの会社でつないでいます。</p>
+      </div>
+    </div>
+    <div class="cue" aria-hidden="true">Scroll<i></i></div>
+  </section>
+
+  <section class="sec" id="concept" data-rail aria-labelledby="concept-h">
+    <div class="wrap concept">
+      <div>
+        <div class="sh rv"><p class="sh__en" aria-hidden="true">Cast &amp; Union</p><h2 class="sh__ja" id="concept-h">名前に込めたこと</h2></div>
+        <!-- 【確認事項】社名の読み解きは本案の解釈です。実際の由来に合わせてください -->
+        <p class="sec-title rv">つくる人と、届ける人と、<br>つかう人のあいだに。</p>
+        <!-- 【確認事項】理念の文章は事業内容をもとにした案です -->
+        <div class="prose rv">
+          <p>ひとつの化粧品が誰かの手に届くまでには、処方を考える人、製造する人、法令に沿って申請や品質を整える人、そして魅力を伝える人がいます。</p>
+          <p>私たちは、その一つひとつの役を担いながら、あいだを結ぶ会社です。ものづくりの技術と、薬事・品質の知見、マーケティングとデータの力を掛け合わせ、<span class="nw">「つくりたい」を「届いた」に</span>変えていきます。</p>
+        </div>
+        <dl class="dict rv">
+          <div><dt>Cast</dt><dd><b>役を担う／型に流す</b>処方、製造、薬事、伝える。それぞれの役を、それぞれの専門で。</dd></div>
+          <div><dt>Union</dt><dd><b>ひとつに結ぶ</b>分かれがちな工程を、ひとつの商品へとつなぐ。</dd></div>
+        </dl>
+      </div>
+      <div class="rv"><svg class="fig" viewBox="0 0 420 380" role="img" aria-label="処方・製造・薬事と品質・伝えるの4つの役割が寄り合い、ひとつの瓶になる図">
+  <path class="ln2" pathLength="1" d="M50 50 C 60 160, 180 170, 200 200"/>
+  <path class="ln2" pathLength="1" d="M160 30 C 160 120, 196 160, 204 200"/>
+  <path class="ln2" pathLength="1" d="M260 30 C 260 120, 214 160, 208 200"/>
+  <path class="ln2" pathLength="1" d="M370 50 C 360 160, 240 170, 212 200"/>
+  <path class="ln" pathLength="1" d="M190 200h40v26l26 28v104H164V254l26-28z"/>
+  <path class="ln" pathLength="1" d="M168 300 q 21 -12 42 0 t 42 0"/>
+  <circle class="dot" cx="50" cy="50" r="6" fill="#E4CFAE"/>
+  <circle class="dot" cx="160" cy="30" r="6" fill="#D9B3AE"/>
+  <circle class="dot" cx="260" cy="30" r="6" fill="#E4CFAE"/>
+  <circle class="dot" cx="370" cy="50" r="6" fill="#D9B3AE"/>
+  <text class="lbl" x="18" y="86">処方</text>
+  <text class="lbl" x="128" y="66" >製造</text>
+  <text class="lbl" x="268" y="66">薬事・品質</text>
+  <text class="lbl" x="350" y="86">伝える</text>
+  <text class="lbl en" x="182" y="340">union</text>
+</svg></div>
+    </div>
+  </section>
+
+  <!-- 画像：Unsplash（仮）ボトルと植物。差し替え推奨 -->
+  <div class="band" aria-hidden="true">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&w=2000&q=72" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div>
+    <div class="band__cap wrap"><p>一滴ずつ、<br>確かめながら満たしていく。</p></div>
+  </div>
+
+  <section class="sec" id="business" data-rail aria-labelledby="biz-h">
+    <div class="wrap">
+      <div class="sh rv"><p class="sh__en" aria-hidden="true">Business</p><h2 class="sh__ja" id="biz-h">事業内容</h2><p class="sh__sub">企画・製造から、薬事・品質、そして届けるしくみまで。</p></div>
+      <!-- 【確認事項】3領域への整理と各説明文は案です。各リストの項目はCSVの事業内容どおりです -->
+      <article class="biz">
+        <div class="biz__media rv"><div class="ph"><img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1000&q=72" alt="木の台に置かれた美容液のボトル" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div></div>
+        <div class="rv">
+          <p class="biz__kind"><span class="biz__no">01</span>  <em>Formulate</em></p>
+          <h3>つくる<br>企画・開発・受託製造</h3>
+          <p>化粧品から医薬部外品、石鹸、日用品雑貨まで。企画と開発の段階から関わり、受託製造、販売までを担います。美容機器についても、企画・製造から輸出入、卸売まで対応しています。</p>
+          <ul class="rule-list"><li>化粧品、医薬部外品、石鹸、日用品雑貨の企画、開発、受託製造および販売</li><li>化粧品および美容機器の企画、製造、輸出入並びに卸売</li></ul>
+        </div>
+      </article>
+      <article class="biz">
+        <div class="biz__media rv"><div class="ph"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1000&q=72" alt="研究室でピペットを使い液体を扱う様子" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div></div>
+        <div class="rv">
+          <p class="biz__kind"><span class="biz__no">02</span>  <em>Comply</em></p>
+          <h3>ととのえる<br>技術指導・薬事・品質</h3>
+          <p>化粧品づくりには、技術と同じくらい、法令への理解と品質への責任が欠かせません。製造に関する技術指導から、薬事申請のサポート、品質管理の支援、美容と健康に関するご相談まで、ものづくりの土台を一緒に整えます。</p>
+          <ul class="rule-list"><li>化粧品製造に関する技術指導およびコンサルティング</li><li>化粧品等の薬事申請サポートおよび品質管理支援</li><li>美容、健康に関するコンサルティング</li></ul>
+        </div>
+      </article>
+      <article class="biz">
+        <div class="biz__media rv"><div class="ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=72" alt="グラフが並ぶデータ分析の画面" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div></div>
+        <div class="rv">
+          <p class="biz__kind"><span class="biz__no">03</span>  <em>Deliver</em></p>
+          <h3>とどける<br>市場・デジタル・データ</h3>
+          <p>市場を調べ、販売を企画し、広告で伝える。さらに、金融アプリやウェブサイトの企画・開発・運営、ブロックチェーン技術を活かしたシステム開発、データサイエンスによる調査・研究まで。数字としくみの力で、届け方を支えます。</p>
+          <ul class="rule-list"><li>マーケティングリサーチ及び販売企画の受託／広告業</li><li>金融アプリケーション、ウェブサイトの企画、開発、運営</li><li>ブロックチェーン技術を活用したシステム開発、運営</li><li>金融・データ解析（データサイエンス）に関する調査・研究・コンサルティング</li></ul>
+        </div>
+      </article>
+      <!-- 【確認事項】金融・ブロックチェーン関連は「システム開発・調査研究」の記載にとどめ、金融商品の勧誘と受け取られない表現にしています -->
+      <!-- 画像：Unsplash（仮）3点。差し替え推奨 -->
+      <div class="trip rv" style="margin-top:clamp(72px,10vw,128px)"><figure><div class="ph"><img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=900&q=72" alt="クリームの容器を手に持つ様子" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div><figcaption aria-hidden="true">化粧品</figcaption></figure><figure><div class="ph"><img src="https://images.unsplash.com/photo-1607006344380-b6775a0824a7?auto=format&fit=crop&w=900&q=72" alt="積み重ねられた手づくりの石鹸" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div><figcaption aria-hidden="true">石鹸</figcaption></figure><figure><div class="ph"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=900&q=72" alt="つながるブロックで表現したブロックチェーンのイメージ" loading="lazy" onerror="this.parentNode.classList.add('is-fallback');this.remove()"></div><figcaption aria-hidden="true">しくみ</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="sec sec--paper" id="process" data-rail aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="sh rv"><p class="sh__en" aria-hidden="true">OEM process</p><h2 class="sh__ja" id="process-h">受託製造の流れ</h2><p class="sh__sub">企画の段階からご一緒し、製造、そして販売に向けた準備まで。</p></div>
+      <!-- 【確認事項】一般的な受託製造の流れをもとにした案です。実際の工程・名称に合わせてください（順序のある工程のため番号を使用） -->
+      <ol class="steps"><li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">01</span><h3>ご相談</h3><p>つくりたい商品のイメージや、届けたい相手をうかがいます。</p></li><li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">02</span><h3>企画・処方</h3><p>コンセプトに合わせて、処方や仕様を検討します。</p></li><li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">03</span><h3>薬事・品質</h3><p>法令に沿った申請や表示、品質管理の体制を整えます。</p></li><li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">04</span><h3>製造</h3><p>決まった仕様にもとづき、製造を行います。</p></li><li class="step"><span class="step__dot" aria-hidden="true"></span><span class="step__no">05</span><h3>販売の準備</h3><p>必要に応じて、リサーチや販売企画、広告もご一緒します。</p></li></ol>
+    </div>
+  </section>
+
+  <section class="sec" id="values" aria-labelledby="values-h">
+    <div class="wrap">
+      <div class="sh rv"><p class="sh__en" aria-hidden="true">Values</p><h2 class="sh__ja" id="values-h">大切にしていること</h2></div>
+      <!-- 【確認事項】3つの価値観は案です -->
+      <div class="values"><div class="value rv"><span class="value__mark" aria-hidden="true">誠</span><h3>誠実なものづくり</h3><p>肌にふれるものだからこそ、品質と法令に誠実に向き合います。</p></div><div class="value rv"><span class="value__mark" aria-hidden="true">結</span><h3>役割をむすぶ</h3><p>企画、製造、薬事、販売。分かれがちな工程をひとつにつなぎます。</p></div><div class="value rv"><span class="value__mark" aria-hidden="true">証</span><h3>根拠で考える</h3><p>リサーチとデータにもとづき、思い込みではない判断を重ねます。</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec sec--deep" id="message" data-rail aria-labelledby="msg-h">
+    <div class="wrap">
+      <div class="sh rv"><p class="sh__en" aria-hidden="true">Message</p><h2 class="sh__ja" id="msg-h">代表メッセージ</h2></div>
+      <!-- 【確認事項】代表メッセージは草案です。ご本人の確認・修正を経て公開してください -->
+      <div class="msg rv">
+      <h3 class="msg__title">役を分け、<br>想いを結ぶ。</h3>
+      <div class="msg__body"><p class="first">ひとつの瓶には、たくさんの人の仕事が詰まっています。</p><p>処方を考える人、つくる人、法令と品質を見守る人、そして魅力を伝える人。どの役が欠けても、商品はお客さまの手に届きません。</p><p>私たちは、そのいくつもの役を担いながら、あいだを結ぶことを仕事にしてきました。技術と、薬事・品質の知見と、データの力。どれかひとつではなく、掛け合わせることで見えてくるものがあります。</p><p>「つくりたい」という想いが、確かなかたちで「届いた」になるまで。誠実に、ご一緒いたします。</p>
+        <!-- 【確認事項】署名は会社名と役職のみの仮置きです。氏名を入れる場合はご本人の確認後に追記してください -->
+        <p class="msg__sign"><small>株式会社キャストユニオン</small>谷口和也</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="sec" id="company" data-rail aria-labelledby="company-h">
+    <div class="wrap company">
+      <div class="sh rv"><p class="sh__en" aria-hidden="true">Company</p><h2 class="sh__ja" id="company-h">会社概要</h2></div>
+      <dl class="profile rv">
+  <div><dt>商号</dt><dd>株式会社キャストユニオン</dd></div>
+  <!-- 【確認事項】代表者の役職名をご確認ください -->
+  <div><dt>代表者</dt><dd>代表取締役　谷口和也</dd></div>
+  <div><dt>所在地</dt><dd>〒545-0014<br>大阪府大阪市阿倍野区西田辺町2-8-6 テイストビル2F</dd></div>
+  <div><dt>事業内容</dt><dd><ul><li>化粧品、医薬部外品、石鹸、日用品雑貨の企画、開発、受託製造および販売</li><li>化粧品および美容機器の企画、製造、輸出入並びに卸売業</li><li>化粧品製造に関する技術指導およびコンサルティング業務</li><li>化粧品等の薬事申請サポートおよび品質管理支援業務</li><li>美容、健康に関するコンサルティング業務</li><li>マーケティングリサーチ及び販売企画の受託</li><li>金融アプリケーション、ウェブサイトの企画、開発、運営</li><li>ブロックチェーン技術を活用したシステム開発、運営</li><li>金融・データ解析（データサイエンス）に関する調査・研究・コンサルティング</li><li>広告業</li></ul></dd></div>
+  <!-- 【確認事項】設立・資本金・従業員数はCSVにないため未掲載です。判明したら下の行を有効にしてください -->
+  <!-- <div><dt>設立</dt><dd>----年--月</dd></div> -->
+  <!-- <div><dt>資本金</dt><dd>---万円</dd></div> -->
+  <!-- <div><dt>従業員数</dt><dd>--名</dd></div> -->
+</dl>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__in">
+      <div>
+        <a class="logo" href="#top" aria-label="株式会社キャストユニオン トップへ"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M13 4h6v4.5l3.5 3.5V28h-13V12L13 8.5z" fill="none" stroke="#EEE9E2" stroke-width="1.2"/><path d="M10.2 19.5q2.9-1.6 5.8 0t5.8 0V27.4H10.2z" fill="#E4CFAE"/><circle cx="16" cy="1.8" r="1.4" fill="#D9B3AE"/></svg><span class="logo__name"><b>キャストユニオン</b><small>CAST UNION</small></span></a>
+        <p class="footer__tag">それぞれの役を、ひと瓶に結ぶ。</p>
+      </div>
+      <nav aria-label="フッターメニュー"><ul><li><a href="#concept">名前に込めたこと</a></li><li><a href="#business">事業内容</a></li><li><a href="#process">受託製造の流れ</a></li><li><a href="#values">大切にしていること</a></li><li><a href="#message">代表メッセージ</a></li><li><a href="#company">会社概要</a></li></ul></nav>
+    </div>
+    <p class="copy">&copy; <span id="year">2026</span> 株式会社キャストユニオン</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function clamp(v,a,b){ return Math.max(a, Math.min(b, v)); }
+  function ease(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; }
+  function easeOut(t){ return 1 - Math.pow(1 - t, 3); }
+  function rgba(c,a){ return 'rgba(' + c + ',' + a + ')'; }
+  var cv = document.getElementById('heroCanvas');
+  var ctx = (cv && cv.getContext) ? cv.getContext('2d') : null;
+  var W = 0, H = 0, dpr = 1;
+  /* ===== site ===== */
+
+  /* hero: drops from four places converge and fill one bottle */
+  var C_CH = '228,207,174', C_RO = '217,179,174', C_TX = '238,233,226';
+  var HERO_STILL = 60;
+  var B = {}, lanes = [];
+  function heroBuild(){
+    var mob = W < 760;
+    var bw = mob ? Math.min(150, W*.4) : Math.min(230, W*.18), bh = mob ? H*.36 : H*.56;
+    B = { cx: mob ? W*.5 : W*.52, bottom: mob ? H*.5 : H*.84, w: bw, h: bh };
+    B.top = B.bottom - B.h; B.neckW = bw*.3; B.neckY = B.top; B.shoulder = B.top + bh*.22;
+    var n = 4; lanes = [];
+    for (var i = 0; i < n; i++){
+      lanes.push({ x: (mob ? W*.12 : W*.08) + (mob ? W*.76 : W*.62) * i/(n-1), off: i*.55, P: 2.4 + i*.17, c: i % 2 ? C_RO : C_CH });
+    }
+  }
+  function bottlePath(){
+    var x = B.cx, nw = B.neckW/2, w = B.w/2;
+    ctx.beginPath();
+    ctx.moveTo(x - nw, B.top); ctx.lineTo(x + nw, B.top); ctx.lineTo(x + nw, B.top + B.h*.08);
+    ctx.quadraticCurveTo(x + w, B.top + B.h*.12, x + w, B.shoulder + B.h*.06);
+    ctx.lineTo(x + w, B.bottom - 8); ctx.quadraticCurveTo(x + w, B.bottom, x + w - 8, B.bottom);
+    ctx.lineTo(x - w + 8, B.bottom); ctx.quadraticCurveTo(x - w, B.bottom, x - w, B.bottom - 8);
+    ctx.lineTo(x - w, B.shoulder + B.h*.06); ctx.quadraticCurveTo(x - w, B.top + B.h*.12, x - nw, B.top + B.h*.08);
+    ctx.closePath();
+  }
+  function heroDraw(t){
+    ctx.clearRect(0, 0, W, H);
+    var dim = W < 760 ? .55 : 1;
+    var lvl = B.bottom - B.h * .72 * easeOut(clamp(t / 14, 0, 1)) - B.h*.04;
+    // liquid
+    ctx.save(); bottlePath(); ctx.clip();
+    var g = ctx.createLinearGradient(0, lvl, 0, B.bottom);
+    g.addColorStop(0, rgba(C_CH, .34*dim)); g.addColorStop(1, rgba(C_RO, .18*dim));
+    ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(B.cx - B.w, B.bottom + 2);
+    for (var x = B.cx - B.w/2 - 4; x <= B.cx + B.w/2 + 4; x += 6){ ctx.lineTo(x, lvl + Math.sin(x*.05 + t*1.6)*2.2 + Math.sin(x*.021 - t)*1.4); }
+    ctx.lineTo(B.cx + B.w, B.bottom + 2); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // glass
+    bottlePath(); ctx.strokeStyle = rgba(C_TX, .42*dim); ctx.lineWidth = 1.1; ctx.stroke();
+    ctx.strokeStyle = rgba(C_TX, .18*dim); ctx.beginPath(); ctx.moveTo(B.cx - B.w/2 + 12, B.shoulder + 20); ctx.lineTo(B.cx - B.w/2 + 12, B.bottom - 22); ctx.stroke();
+    // drops: each lane falls and bends toward the neck (cast -> union)
+    lanes.forEach(function(L){
+      var u = t - L.off; if (u < 0) return;
+      var a = u % L.P, fall = 1.25;
+      var targetY = lvl;
+      if (a < fall){
+        var k = a / fall, e = k*k;
+        var x = L.x + (B.cx - L.x) * ease(k), y = -20 + (targetY + 20) * e;
+        // faint trail
+        ctx.strokeStyle = rgba(L.c, .16*dim); ctx.lineWidth = 1; ctx.beginPath();
+        for (var j = 0; j <= 10; j++){ var kk = Math.max(0, k - j*.025), ee = kk*kk; var xx = L.x + (B.cx - L.x)*ease(kk), yy = -20 + (targetY+20)*ee; j ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy); }
+        ctx.stroke();
+        ctx.fillStyle = rgba(L.c, .95*dim);
+        ctx.beginPath(); ctx.moveTo(x, y - 9); ctx.quadraticCurveTo(x + 5, y - 1, x + 4, y + 2); ctx.arc(x, y + 2, 4, 0, Math.PI); ctx.quadraticCurveTo(x - 5, y - 1, x, y - 9); ctx.fill();
+      } else {
+        var r = (a - fall) / (L.P - fall);
+        ctx.strokeStyle = rgba(L.c, (1 - r) * .7 * dim); ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.ellipse(B.cx, lvl, 4 + r * B.w*.42, 1.5 + r * 5, 0, 0, Math.PI*2); ctx.stroke();
+      }
+    });
+    // sparkle at neck when filled
+    var s = clamp((t - 10) / 3, 0, 1);
+    if (s > 0){ ctx.fillStyle = rgba(C_CH, .6*s*(.6 + .4*Math.sin(t*2))*dim); ctx.beginPath(); ctx.arc(B.cx, B.top - 16, 2.2, 0, Math.PI*2); ctx.fill(); }
+  }
+
+  /* rail: a drop runs down, the vial fills */
+  var railDrop = document.getElementById('railDrop'), railLiq = document.getElementById('railLiq'), railRead = document.getElementById('railRead'), railLine = document.querySelector('.rail__line');
+  function railUpdate(p){
+    var len = railLine.offsetHeight;
+    railDrop.style.top = (44 + p * len) + 'px';
+    railLiq.setAttribute('y', (60 - p * 46).toFixed(1));
+    railRead.textContent = String(Math.round(p * 100)).padStart(2, '0') + '%';
+  }
+
+  /* ---- hero canvas boilerplate ---- */
+  var running = false, visible = true, raf = 0, t0 = performance.now();
+  function resize(){
+    if (!ctx) return;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    heroBuild();
+  }
+  function loop(now){ if (!running) return; heroDraw((now - t0) / 1000); raf = requestAnimationFrame(loop); }
+  function start(){ if (!ctx || running || reduce || !visible || document.hidden) return; running = true; raf = requestAnimationFrame(loop); }
+  function stop(){ running = false; cancelAnimationFrame(raf); }
+  function heroStill(){ if (ctx && !running) heroDraw(HERO_STILL); }
+  if (ctx){
+    resize();
+    if (reduce) heroStill(); else start();
+    var rt, lastW = W;
+    addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){
+      var w = cv.clientWidth; if (w === lastW && !reduce && running) { lastW = w; return; }
+      lastW = w; resize(); if (!running) heroStill(); }, 150); });
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ visible = en[0].isIntersecting; visible ? start() : stop(); }).observe(cv.parentElement);
+    }
+    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  }
+
+  /* ---- header + rail (rAF throttled) ---- */
+  var header = document.getElementById('header'), ticking = false;
+  var railSecs = $$('[data-rail]');
+  function progress(){ var max = document.documentElement.scrollHeight - innerHeight; return max > 0 ? clamp(scrollY / max, 0, 1) : 0; }
+  function onScroll(){
+    header.classList.toggle('is-scrolled', scrollY > 40);
+    if (typeof railUpdate === 'function') railUpdate(progress());
+    bandParallax();
+    ticking = false;
+  }
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  addEventListener('resize', function(){ if (typeof railLayout === 'function') railLayout(); onScroll(); });
+  addEventListener('load', function(){ if (typeof railLayout === 'function') railLayout(); onScroll(); });
+  function secProgress(){
+    var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    return railSecs.map(function(s){ return clamp((s.getBoundingClientRect().top + scrollY) / max, 0, 1); });
+  }
+
+  /* ---- band parallax ---- */
+  var bands = $$('.band .ph img');
+  function bandParallax(){
+    if (reduce) return;
+    bands.forEach(function(im){
+      var r = im.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      var k = (r.top + r.height/2 - innerHeight/2) / innerHeight;
+      im.style.transform = 'translateY(' + (k * -40).toFixed(1) + 'px)';
+    });
+  }
+
+  /* ---- menu ---- */
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('gnav');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    nav.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open){ var f = nav.querySelector('a'); if (f) f.focus(); }
+  }
+  btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a') && nav.classList.contains('is-open')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('is-open')){ setMenu(false); btn.focus(); } });
+  matchMedia('(min-width:901px)').addEventListener('change', function(m){ if (m.matches) setMenu(false); });
+
+  /* ---- reveal: one-shot ---- */
+  var targets = $$('.rv, .fig, .steps, [data-reveal]');
+  function reveal(el){ el.classList.add('is-in'); if (typeof onReveal === 'function') onReveal(el); }
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (!en.isIntersecting) return; reveal(en.target); io.unobserve(en.target); });
+    }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(reveal);
+  }
+
+  /* ---- misc ---- */
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+  if (typeof siteInit === 'function') siteInit();
+  if (typeof railLayout === 'function') railLayout();
+  onScroll();
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.add('is-loaded'); }); });
+})();
+</script>
+</body>
+</html>
